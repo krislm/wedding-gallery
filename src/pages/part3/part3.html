@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Middag</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!--<ion-list>
+      <ion-card *ngFor="let img of images">
+        <img [src]="img"/>
+      </ion-card>
+    </ion-list>-->
+    <ion-grid *ngFor="let grid of grids">
+        <ion-row *ngFor="let row of grid">
+            <ion-col *ngFor="let file_uri of row">
+                <!--<ion-card *ngFor="let img of images">-->
+                <img [src]="file_uri"/>
+                <!--</ion-card>-->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
